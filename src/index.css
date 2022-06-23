@@ -41,24 +41,31 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 #app {
-  background-image: url('../src/assets/img/background-image.jpeg');
+  background-image: url('../public/img/body/background-image.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .app-header {
-  max-height: 44px;
+  margin: 0 0 16px;
   background-color: var(--background-color-theme-main);
 }
 
 .app-header-nav {
-  padding: 6px 4px;
+  padding: 16px 4px;
 }
 
 .app-header-logo {
+  display: block;
   padding: 0 6px;
+  width: 75px;
   color: var(--text-color-white);
 }
 
