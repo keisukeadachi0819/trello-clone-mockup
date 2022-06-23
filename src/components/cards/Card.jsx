@@ -4,7 +4,7 @@ import { Draggable } from 'react-beautiful-dnd';
 export const Card = ({ card, cards, setCards, index }) => {
     const handleDelete = (id) => {
         setCards(cards.filter((card) => card.id !== id));
-    } 
+    }
 
     return (
         <Draggable index={index} draggableId={card.draggableId}>

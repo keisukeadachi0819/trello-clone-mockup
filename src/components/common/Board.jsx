@@ -49,17 +49,19 @@ export const Board = () => {
                     cardList={cardList}
                   />
                 ))}
-                  <AddCardList
-                    cardLists={cardLists}
-                    setCardLists={setCardLists}
-                  />
                 {provided.placeholder}
               </div>
             )}
             </Droppable>
           </DragDropContext>
+          <AddCardList
+            cardLists={cardLists}
+            setCardLists={setCardLists}
+          />
         </div>
       </div>
+
+      <div className='quick-card-edit'></div>
     </div>
   )
 }

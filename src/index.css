@@ -4,6 +4,7 @@
   --text-color-black: #000000;
   --text-color-white: #ffffff;
   --text-color-theme-main: #172b4d;
+  --text-color-theme-sub: #172b4d;
   --background-color-trasparent: transparent;
   --background-color-white: #ffffff;
   --background-color-gray: #ebecf0;
@@ -15,6 +16,7 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
   box-sizing: border-box;
 }
 
@@ -84,9 +86,13 @@ a {
   overflow-y: hidden;
 }
 
-.card-list-wrapper {
+.card-lists {
   display: inline-block;
-  vertical-align: top;
+}
+
+.card-list-wrapper {
+  position: relative;
+  display: inline-block;
   margin: 0 4px;
   width: 272px;
   height: 100%;
@@ -126,6 +132,7 @@ a {
   position: relative;
   padding: 10px 8px;
   width: 232px;
+  height: 32px;
 }
 
 .card-list-input-title {
@@ -141,6 +148,70 @@ a {
   outline: none;
 }
 
+.pop-over-menu {
+  position: absolute;
+  top: 40px;
+  right: -270px;
+  width: 300px;
+  border-radius: 3px;
+  background-color: var(--background-color-white);
+  box-shadow: 0 8px 16px -4px #091e4240, 0 0 0 1px #091e4214;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.pop-over-menu.inactive {
+  display: none;
+}
+
+.pop-over-menu.active {
+  display: block;
+}
+
+.pop-over-header-title {
+  position: relative;
+  border-bottom: 1px solid #091e4221;
+}
+
+.pop-over-header-title > span {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-color-theme-main);
+  line-height: 40px;
+}
+
+.close-pop-over-menu {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  border: none;
+  background-color: var(--background-color-white);
+  cursor: pointer;
+}
+
+.close-pop-over-menu > i {
+  font-size: 16px;
+  color: var(--background-color-theme-main);
+}
+
+.pop-over-menu-items button {
+  display: block;
+  padding: 6px 12px;
+  text-align: left;
+  color: var(--text-color-theme-sub);
+  width: 100%;
+  border: none;
+  background-color: var(--background-color-white);
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.pop-over-menu-items button:hover {
+  background-color: var(--background-color-gray);
+}
+
 .card-list-menu {
   position: absolute;
   top: 10px;
@@ -150,6 +221,11 @@ a {
   text-align: center;
   cursor: pointer;
   z-index: 1;
+}
+
+.card-list-menu-btn {
+  border: none;
+  cursor: pointer;
 }
 
 .list-cards {
