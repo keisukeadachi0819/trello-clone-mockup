@@ -6,7 +6,6 @@ export const CardListTitle = () => {
   
   const handleClicked = () => {
     setIsClicked(true);
-    console.log(isClicked);
   }
 
   const handleChange = (e) => {
