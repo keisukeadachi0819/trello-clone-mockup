@@ -1,13 +1,248 @@
-body {
+@charset "UTF-8";
+
+:root {
+  --text-color-black: #000000;
+  --text-color-white: #ffffff;
+  --text-color-theme-main: #172b4d;
+  --background-color-trasparent: transparent;
+  --background-color-white: #ffffff;
+  --background-color-gray: #ebecf0;
+  --background-color-theme-main: #545a54;
+  --background-color-theme-sub: rgba(255,255,255,0.2);
+  --background-color-theme-sub-event: rgba(255,255,255,0.32);
+}
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f5f7;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root, #app {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  background-image: url('../src/assets/img/background-image.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app-header {
+  max-height: 44px;
+  background-color: var(--background-color-theme-main);
+}
+
+.app-header-nav {
+  padding: 6px 4px;
+}
+
+.app-header-logo {
+  padding: 0 6px;
+  color: var(--text-color-white);
+}
+
+.board-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.board-inner {
+  position: relative;
+  flex-grow: 1;
+}
+
+.board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  user-select: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.card-list-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 4px;
+  width: 272px;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.card-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  border-radius: 3px;
+  background-color: var(--background-color-gray);
+  white-space: normal;
+}
+
+.card-list-header {
+  position: relative;
+}
+
+.card-list-title-wrapper {
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.card-list-tile {
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  text-align: left;
+  color: var(--text-color-theme-main);
+}
+
+.card-list-input-title-form {
+  position: relative;
+  padding: 10px 8px;
+  width: 232px;
+}
+
+.card-list-input-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4px 8px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+.card-list-menu {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.list-cards {
+  padding: 0 8px;
+}
+
+.card-wrpper {
+  margin-bottom: 16px;
+}
+
+.card-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 8px;
+  padding: 6px 8px 2px;
+  border-radius: 3px;
+  background-color: var(--background-color-white);
+  box-shadow: 0 1px 0 #091e4240;
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  color: var(--text-color-theme-main);
+}
+
+.card-edit {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  transition: all .2s;
+}
+
+.card:hover .card-edit {
+  display: block;
+}
+
+.card-edit > button {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--background-color-white);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.card-edit > button > i {
+  font-size: 10px;
+}
+
+.card-edit > button:hover {
+  background-color: var(--background-color-gray);
+}
+
+.add-card-wrapper {
+  padding: 10px 8px;
+}
+
+.add-card-input {
+  padding: 6px 8px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+.add-list {
+  display: inline-block;
+  padding: 8px 4px;
+  border-radius: 3px;
+  background-color: var(--background-color-theme-sub);
+}
+
+.add-list:hover {
+  background-color: var(--background-color-theme-sub-event);
+}
+
+.add-list-btn {
+  padding: 4px;
+  font-size: 14px;
+  color: var(--text-color-white);
+  border: none;
+  background-color: var(--background-color-trasparent);
+  cursor: pointer;
+  transition: 0.2s all;
 }
