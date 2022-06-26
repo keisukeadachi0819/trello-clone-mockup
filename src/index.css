@@ -54,7 +54,6 @@ img {
 }
 
 .app-header {
-  margin: 0 0 16px;
   background-color: var(--background-color-theme-main);
 }
 
@@ -73,6 +72,7 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: 0;
   height: 100%;
 }
 
@@ -170,16 +170,15 @@ img {
   border-radius: 3px;
   background-color: var(--background-color-white);
   box-shadow: 0 8px 16px -4px #091e4240, 0 0 0 1px #091e4214;
+  transform: scale(0);
+  transform-origin: top left;
   overflow: hidden;
   z-index: 999;
-}
-
-.pop-over-menu.inactive {
-  display: none;
+  transition: transform 0.2s;
 }
 
 .pop-over-menu.active {
-  display: block;
+  transform: scale(1);
 }
 
 .pop-over-header-title {
@@ -226,7 +225,7 @@ img {
   background-color: var(--background-color-gray);
 }
 
-.card-list-menu {
+.card-list-menu-btn {
   position: absolute;
   top: 10px;
   right: 8px;
@@ -235,9 +234,6 @@ img {
   text-align: center;
   cursor: pointer;
   z-index: 1;
-}
-
-.card-list-menu-btn {
   border: none;
   cursor: pointer;
 }

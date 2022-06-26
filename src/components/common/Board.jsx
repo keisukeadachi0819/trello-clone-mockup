@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Header } from './Header';
 import { Droppable } from 'react-beautiful-dnd';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { v4 as uuidv4 } from 'uuid';
@@ -27,6 +28,7 @@ export const Board = () => {
 
   return (
     <div className='board-wrapper'>
+      <Header />
       <div className='board-inner'>
         <div className='board'>
           <DragDropContext onDragEnd={handleDragEnd}>

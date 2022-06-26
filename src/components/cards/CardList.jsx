@@ -8,11 +8,6 @@ import { Draggable } from 'react-beautiful-dnd';
 export const CardList = ({cardLists, setCardLists, cardList, index}) => {
   const [cardTitle, setCardTitle] = useState("");
   const [cards, setCards] = useState([]);
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  }
 
   return (
     <Draggable 
@@ -28,14 +23,11 @@ export const CardList = ({cardLists, setCardLists, cardList, index}) => {
           <div className='card-list' {...provided.dragHandleProps}>
             <div className='card-list-header'>
               <CardListTitle />
-              <div 
-                className='card-list-menu'
-                onClick={handleClick}
-              >
-                <button className='card-list-menu-btn'>
-                  <i className="fa-solid fa-ellipsis"></i>
-                </button>
-              </div>
+              <CardListMenu 
+                cardLists={cardLists}
+                setCardLists={setCardLists}
+                cardList={cardList}
+              />
             </div>
             <div className='list-cards'>
               <Cards cardTitle={cardTitle} cards={cards} setCards={setCards} />
@@ -47,14 +39,6 @@ export const CardList = ({cardLists, setCardLists, cardList, index}) => {
               setCards={setCards}
             />
           </div>
-
-          <CardListMenu 
-            cardLists={cardLists}
-            setCardLists={setCardLists}
-            cardList={cardList}
-            isClicked={isClicked}
-            setIsClicked={setIsClicked}
-          />
         </div>
       )}
     </Draggable>
